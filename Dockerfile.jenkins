@@ -1,7 +1,13 @@
-# Dockerfile.jenkins
 FROM python:3.10-slim
 
-# Install Docker CLI inside the container
-RUN apt-get update && \
-    apt-get install -y docker.io && \
-    rm -rf /var/lib/apt/lists/*
+# Install Docker and dependencies for AWS SAM CLI
+RUN apt-get update && apt-get install -y \
+    docker.io \
+    git \
+    unzip \
+    zip \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Optional: install pip packages globally if you want
+RUN pip install aws-sam-cli
