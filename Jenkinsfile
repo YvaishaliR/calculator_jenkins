@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'python:3.10-slim'
+              image 'yvaishair/python-with-docker'
             args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }

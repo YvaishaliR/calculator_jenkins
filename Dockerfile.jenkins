@@ -1,0 +1,7 @@
+# Dockerfile.jenkins
+FROM python:3.10-slim
+
+# Install Docker CLI inside the container
+RUN apt-get update && \
+    apt-get install -y docker.io && \
+    rm -rf /var/lib/apt/lists/*
